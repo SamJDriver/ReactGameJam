@@ -13,7 +13,6 @@ export const Mouse: React.FC<React.PropsWithChildren<{ constraint?: { stiffness:
       
       const scale = 1 / window.devicePixelRatio;
       Matter.Mouse.setScale(mouse, { x: scale, y: scale });
-      console.log(engine);
       Matter.World.add(engine.world, mouseConstraint);
   
       return () => {

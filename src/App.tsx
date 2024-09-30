@@ -1,30 +1,24 @@
 import './App.css';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { BlurFilter, TextStyle, Texture } from 'pixi.js';
 import { Stage, Container, Sprite, Text, AnimatedSprite } from '@pixi/react';
-import { World } from './components/World/World';
+import { WindowHeight, WindowWidth, World } from './components/World/World';
 import { Mouse } from './components/Mouse/Mouse';
 import { Shape } from './components/Shape/Shape';
+import { ForestFloor } from './components/ForestFloor/ForestFloor';
 
 const App = () => {
-  const blurFilter = useMemo(() => new BlurFilter(2), []);
-  const bunnyUrl = 'https://pixijs.io/pixi-react/img/bunny.png';
-  const coinUrl = 'https://pixijs.io/pixi-react/img/coin.png';
-  const height = 800;
-  const width = 600;
-
-  const bunnyTexture = Texture.from(bunnyUrl);
-  const coinTexture = Texture.from(coinUrl);
+  // const blurFilter = useMemo(() => new BlurFilter(2), []);
   
-  const textures = [bunnyTexture, coinTexture];  
+  // const textures = [bunnyTexture, coinTexture];  
   return (
-    <Stage width={width} height={height} options={{ background: 0x1099bb }}>
+    <Stage width={WindowWidth} height={WindowHeight}>
       <World>
         <Mouse>
           <>
-            <Container x={200} y={200} name="bounds">
-            <Shape
+            <Container name="bounds">
+            {/* <Shape
                 name="bottom"
                 type="rectangle"
                 x = {width / 2}
@@ -59,10 +53,11 @@ const App = () => {
                 width = {100}
                 height = {height}
                 options={{ isStatic: true }}
-                />
+                /> */}
+              <ForestFloor />
             </Container>
 
-            <Shape
+            {/* <Shape
               type="circle"
               fillStyle={[0x383838, 0.5]}
               x={400}
@@ -75,6 +70,20 @@ const App = () => {
                       stiffness: 1
               }}
               />
+              
+            <Shape
+              type="circle"
+              fillStyle={[0x383838, 0.5]}
+              x={400}
+              y={200}
+              radius={20 + Math.random() * 100}
+              options={{
+                friction: 0.8,
+                  density: 0.00001,
+                    restitution: 0.4,
+                      stiffness: 1
+              }}
+              /> */}
 
           </>
         </Mouse>

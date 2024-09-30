@@ -6,6 +6,8 @@ import React from "react";
 export const EngineContext = React.createContext<Matter.Engine | null>(null);
 export const useEngine = () => useContext(EngineContext)!;
 
+export const WindowWidth = 1200;
+export const WindowHeight = 900;
 
 export const World = ({ children } : React.PropsWithChildren<{}>) => {
     const [engine] = useState(() => Matter.Engine.create());
