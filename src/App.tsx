@@ -7,6 +7,7 @@ import { WindowHeight, WindowWidth, World } from './components/World/World';
 import { Mouse } from './components/Mouse/Mouse';
 import { Shape } from './components/Shape/Shape';
 import { ForestFloor } from './components/ForestFloor/ForestFloor';
+import { Archer } from './components/Archer/Archer';
 
 const App = () => {
   // const blurFilter = useMemo(() => new BlurFilter(2), []);
@@ -54,6 +55,7 @@ const App = () => {
                 height = {height}
                 options={{ isStatic: true }}
                 /> */}
+                <Archer />
               <ForestFloor />
             </Container>
 
